@@ -17,7 +17,7 @@ struct WalksView: View {
         ZStack {
             Color.teal.opacity(0.2).ignoresSafeArea(edges: .top)
             
-            Text("Challenges")
+            Text("Walks")
         }
     }
 }

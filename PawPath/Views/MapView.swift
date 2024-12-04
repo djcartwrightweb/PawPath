@@ -9,7 +9,13 @@ import SwiftUI
 
 struct MapView: View {
     var body: some View {
-        Text("Maps")
+        
+        ZStack {
+            Color.teal.opacity(0.2).ignoresSafeArea(edges: .top)
+            
+            Text("Map")
+        }
+        
     }
 }
 

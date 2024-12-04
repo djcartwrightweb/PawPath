@@ -9,7 +9,25 @@ import SwiftUI
 
 struct TrailWalksDataView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            
+            Text("Oct 1")
+                .padding(.horizontal)
+            Spacer()
+            
+            Text("12:31")
+            
+            Image(systemName: "clock.fill")
+                .padding(.trailing)
+            
+            Text("601 Kcal")
+            Image(systemName: "figure.walk")
+                .padding(.trailing)
+            
+        }
+        .padding(.trailing)
+        .font(.subheadline)
+        .fontWeight(.semibold)
     }
 }
 

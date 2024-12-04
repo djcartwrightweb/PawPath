@@ -8,30 +8,43 @@
 import SwiftUI
 
 struct MenuView: View {
+    
+    @State private var selection = 0
+    
+    init() {
+//        UITabBar.appearance().barTintColor = UIColor.systemRed
+        UITabBar.appearance().unselectedItemTintColor = UIColor.systemCyan
+//        UITabBar.appearance().tintColor = UIColor.systemIndigo
+    }
+    
     var body: some View {
         
-        TabView {
-            Tab("Trails", systemImage: "leaf") {
-                Text("test")
+        
+        TabView(selection: $selection) {
+            
+            Tab("Trails", systemImage: "leaf", value: 0) {
+                TrailsView()
             }
             
-            Tab("Parks", systemImage: "tree") {
-                Text("test")
+            Tab("Parks", systemImage: "tree", value: 1) {
+                ParksView()
             }
             
-            Tab("Map", systemImage: "mappin.and.ellipse") {
-                Text("test")
+            Tab("Start / Map", systemImage: "mappin.and.ellipse", value: 2) {
+                MapView()
             }
             
-            Tab("Challenges", systemImage: "trophy") {
-                Text("test")
+            Tab("Walks", systemImage: "figure.walk", value: 2) {
+                WalksView()
             }
+            .badge(1)
             
-            Tab("Settings", systemImage: "gear") {
-                Text("test")
+            Tab("Settings", systemImage: "pawprint", value: 4) {
+                SettingsView()
                 
             }
         }
+        
     }
 }
 
