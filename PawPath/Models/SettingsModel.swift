@@ -23,10 +23,6 @@ enum TrackingMethod {
 
 struct SettingsModel {
     
-    //personal details that may not be used:
-    //var name: String = ""
-    //var email: String = ""
-    
     //activity challenges
     var wantsChallenges: Bool = true
     

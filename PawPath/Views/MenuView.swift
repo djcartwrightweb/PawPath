@@ -26,7 +26,7 @@ struct MenuView: View {
                 TrailsView()
             }
             
-            Tab("Parks", systemImage: "tree", value: 1) {
+            Tab("Dog Parks", systemImage: "tree", value: 1) {
                 ParksView()
             }
             
