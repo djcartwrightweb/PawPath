@@ -10,8 +10,12 @@ import SwiftUI
 @main
 struct PawPathApp: App {
     var body: some Scene {
+        
+        @State var settingsViewModel = SettingsViewModel()
+        
         WindowGroup {
             MenuView()
+                .environment(settingsViewModel)
         }
     }
 }

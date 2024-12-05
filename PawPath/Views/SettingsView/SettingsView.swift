@@ -14,36 +14,21 @@
  imageUpload?
  
  Goals (separate view)
- -
- 
- -Notifications on / off
- -Metric vs. Imperial (kms vs miles)
+
  */
-
-
-//Units of measure (toggle or picker)            DONE
-//Map Style (picker or segmented control)        DONE
-//Notifications
-//New trails added
-//Updates
-//Weather alerts for favourited trail
-//Account Settings
-//profile pictures
-//name
-//email
-//Activity tracking on / off
 
 
 import SwiftUI
 
 struct SettingsView: View {
-
-    @State var settings = SettingsModel()
+    
+    @Environment(SettingsViewModel.self) var settingsViewModel
     private var settingsKey: String = "paw_path_settings"
 
     var body: some View {
-        
-        
+
+        //Required to pass settings vm throughout child views
+        @Bindable var vm = settingsViewModel
         
         ZStack {
             Color.teal.opacity(0.2).ignoresSafeArea(edges: .top)
@@ -60,28 +45,24 @@ struct SettingsView: View {
                     
                     Spacer()
                     
-                    SettingsChallengesView(settings: $settings)
-                        .onChange(of: settings) { _, value in
-                            print("saving settings...")
-                            saveSettings()
-                        }
+                    SettingsChallengesView(settings: $vm.mySettings)
                     
                     Divider()
                         .padding()
                     
-                    SettingsTrackingView(settings: $settings)
+                    SettingsTrackingView(settings: $vm.mySettings)
                     
                     Divider()
                         .padding()
                     
                     
                     
-                    SettingsMapView(settings: $settings)
+                    SettingsMapView(settings: $vm.mySettings)
                     
                     Divider()
                         .padding()
                     
-                    SettingsNotificationsView(settings: $settings)
+                    SettingsNotificationsView(settings: $vm.mySettings)
                     
                     Divider()
                         .padding()
@@ -94,25 +75,14 @@ struct SettingsView: View {
             
         }
         .onAppear {
-            getSettings()
+            vm.getSettings()
+            print("on appear working")
+        }
+        .onChange(of: vm.mySettings) { _, value in
+            vm.saveSettings()
         }
     }
     
-    func saveSettings() {
-        if let encodedData = try? JSONEncoder().encode(settings) {
-            UserDefaults.standard.set(encodedData, forKey: settingsKey)
-        }
-    }
-    
-    func getSettings() {
-        guard
-            let data = UserDefaults.standard.data(forKey: settingsKey),
-            let savedSettings = try? JSONDecoder().decode(SettingsModel.self, from: data)
-        else {
-            return
-        }
-        self.settings = savedSettings
-    }
     
 }
 
@@ -120,4 +90,5 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
+        .environment(SettingsViewModel())
 }
