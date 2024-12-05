@@ -39,6 +39,7 @@ import SwiftUI
 struct SettingsView: View {
 
     @State var settings = SettingsModel()
+    private var settingsKey: String = "paw_path_settings"
 
     var body: some View {
         
@@ -60,6 +61,10 @@ struct SettingsView: View {
                     Spacer()
                     
                     SettingsChallengesView(settings: $settings)
+                        .onChange(of: settings) { _, value in
+                            print("saving settings...")
+                            saveSettings()
+                        }
                     
                     Divider()
                         .padding()
@@ -87,9 +92,28 @@ struct SettingsView: View {
                 .padding()
             }
             
-            
+        }
+        .onAppear {
+            getSettings()
         }
     }
+    
+    func saveSettings() {
+        if let encodedData = try? JSONEncoder().encode(settings) {
+            UserDefaults.standard.set(encodedData, forKey: settingsKey)
+        }
+    }
+    
+    func getSettings() {
+        guard
+            let data = UserDefaults.standard.data(forKey: settingsKey),
+            let savedSettings = try? JSONDecoder().decode(SettingsModel.self, from: data)
+        else {
+            return
+        }
+        self.settings = savedSettings
+    }
+    
 }
 
 
