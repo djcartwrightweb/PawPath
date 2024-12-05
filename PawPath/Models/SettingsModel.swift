@@ -43,12 +43,3 @@ struct SettingsModel: Codable, Equatable {
     
 }
 
-
-
-/*
- 
- possible to use didset?
- possible to return a new struct each time a change is made and then save it this way
- how to go about loading userdefaults and binding to settings?
- 
- */
