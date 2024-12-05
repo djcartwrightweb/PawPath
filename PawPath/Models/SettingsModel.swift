@@ -7,21 +7,21 @@
 
 import Foundation
 
-enum MeasurementUnit {
+enum MeasurementUnit: Codable {
     case kms, miles
 }
 
-enum MapStyle {
+enum MapStyle: Codable {
     case standard, satellite, hybrid
 }
 
-enum TrackingMethod {
+enum TrackingMethod: Codable {
     case gps, steps, off
 }
 
 
 
-struct SettingsModel {
+struct SettingsModel: Codable, Equatable {
     
     //activity challenges
     var wantsChallenges: Bool = true
@@ -42,3 +42,13 @@ struct SettingsModel {
     var activityTracking = false //when turning this on, expose more view?
     
 }
+
+
+
+/*
+ 
+ possible to use didset?
+ possible to return a new struct each time a change is made and then save it this way
+ how to go about loading userdefaults and binding to settings?
+ 
+ */
