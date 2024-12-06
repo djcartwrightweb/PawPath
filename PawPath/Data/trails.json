@@ -1,0 +1,32 @@
+{
+    "trailId": 1234,
+    "name": "Sunset Trail",
+    "description": "A challenging trail with stunning views of the valley.",
+    "location": "Santa Monica"
+    "coordinates": {
+        "latitude": 34.0132,
+        "longitude": -118.495
+    }
+    "photos": ["trailhead.jpg", "valley_view.jpg"],
+    "difficulty": "moderate",
+    "terrain": "Rocky, Steep",
+    "length": 5.2,
+    "duration": 120,
+    "elevationGain": 600,
+    "facilities": ["parking", "restrooms", "water stations"],
+    "dogFriendlyRating": 4,
+    "dogAmenities": {
+        "waterStations": true,
+        "wasteStations": true,
+        "offLeashAreas": false
+    },
+    "rules": {
+        "leashRequired": true,
+        "cleanupRequired": true
+    }
+    "waterSources": "Water fountain at the trailhead",
+    "parkingAvailability": "Limited parking, carpooling recommended",
+    "nearbyAmenities": ["Dog park, Pet store, Veterinary clinic"]
+}
+
+
