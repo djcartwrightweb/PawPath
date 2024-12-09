@@ -30,23 +30,33 @@ struct SettingsDogsView: View {
                                         .resizable()
                                         .frame(width: 50, height: 50)
                                         .foregroundStyle(Color.brown)
+                                    
                                 }
                         }
                 }
-                Circle()
-                    .frame(width: 100, height: 100)
-                    .foregroundStyle(Color.teal.opacity(0.7))
-                    .overlay {
-                        Circle()
-                            .frame(width: 90, height: 90)
-                            .foregroundStyle(Color.teal) //add new dog
-                            .overlay {
-                                Image(systemName: "plus")
-                                    .foregroundStyle(Color.white)
-                            }
-                    }
+                
+                NavigationLink {
+                    AddDogView()
+                } label: {
+                    Circle()
+                        .frame(width: 100, height: 100)
+                        .foregroundStyle(Color.teal.opacity(0.7))
+                        .overlay {
+                            Circle()
+                                .frame(width: 90, height: 90)
+                                .foregroundStyle(Color.teal) //add new dog
+                                .overlay {
+                                    Image(systemName: "plus")
+                                        .foregroundStyle(Color.white)
+                                }
+                        }
+                }
+                
+                
+                
             }
         }.scrollIndicators(.hidden)
+        
         
     }
 }

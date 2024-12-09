@@ -30,56 +30,58 @@ struct SettingsView: View {
         //Required to pass settings vm throughout child views
         @Bindable var vm = settingsViewModel
         
-        ZStack {
-            Color.teal.opacity(0.2).ignoresSafeArea(edges: .top)
-        
-            
-            ScrollView {
-                VStack(alignment: .leading) {
-                    
-                    
-                    SettingsDogsView()
-                    
-                    Divider()
-                        .padding()
-                    
-                    Spacer()
-                    
-                    SettingsChallengesView(settings: $vm.mySettings)
-                    
-                    Divider()
-                        .padding()
-                    
-                    SettingsTrackingView(settings: $vm.mySettings)
-                    
-                    Divider()
-                        .padding()
-                    
-                    
-                    
-                    SettingsMapView(settings: $vm.mySettings)
-                    
-                    Divider()
-                        .padding()
-                    
-                    SettingsNotificationsView(settings: $vm.mySettings)
-                    
-                    Divider()
-                        .padding()
-                    
-                    Spacer()
-                    
+        NavigationStack {
+            ZStack {
+                Color.teal.opacity(0.2).ignoresSafeArea(edges: .top)
+                
+                
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        
+                        
+                        SettingsDogsView()
+                        
+                        Divider()
+                            .padding()
+                        
+                        Spacer()
+                        
+                        SettingsChallengesView(settings: $vm.mySettings)
+                        
+                        Divider()
+                            .padding()
+                        
+                        SettingsTrackingView(settings: $vm.mySettings)
+                        
+                        Divider()
+                            .padding()
+                        
+                        
+                        
+                        SettingsMapView(settings: $vm.mySettings)
+                        
+                        Divider()
+                            .padding()
+                        
+                        SettingsNotificationsView(settings: $vm.mySettings)
+                        
+                        Divider()
+                            .padding()
+                        
+                        Spacer()
+                        
+                    }
+                    .padding()
                 }
-                .padding()
+                
             }
-            
-        }
-        .onAppear {
-            vm.getSettings()
-            print("on appear working")
-        }
-        .onChange(of: vm.mySettings) { _, value in
-            vm.saveSettings()
+            .onAppear {
+                vm.getSettings()
+                print("on appear working")
+            }
+            .onChange(of: vm.mySettings) { _, value in
+                vm.saveSettings()
+            }
         }
     }
     
