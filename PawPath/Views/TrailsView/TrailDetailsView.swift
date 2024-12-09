@@ -19,18 +19,21 @@ struct TrailDetailsView: View {
                 .fontDesign(.serif)
                 .padding()
             
-            
-            RoundedRectangle(cornerRadius: 10)
+            Image(trail.photos[0])
+                .resizable()
                 .frame(width: 300, height: 400)
-                .foregroundStyle(Color.teal)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
                 .shadow(radius: 10)
             
             Divider()
                 .padding()
             
-            Text("Longer description will go here along with images that can be flipped left and right (gallery)")
+            Text(trail.description)
                 .fontDesign(.serif)
                 .padding()
+                .onTapGesture {
+                    print(trail)
+                }
             
             Divider()
                 .padding()
