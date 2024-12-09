@@ -13,14 +13,23 @@ struct TrailMapView: View {
     let latitude: Double
     let longitude: Double
     
-
+    var coordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
+    }
+    
+    var span: MKCoordinateSpan {
+        MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+    }
     
     var body: some View {
-        Map {
-            Marker("Trail Start!", systemImage: "figure.walk", coordinate: CLLocationCoordinate2D(
-                latitude: latitude,
-                longitude: longitude
-            ))
+        Map(
+            initialPosition:
+                    .region(MKCoordinateRegion(
+                        center: coordinate,
+                        span: span)
+                    )
+        ) {
+            Marker("Trail Start!", systemImage: "figure.walk", coordinate: coordinate)
         }   .mapStyle(.imagery(elevation: .realistic))
             .frame(width: 300, height: 400)
             .clipShape(RoundedRectangle(cornerRadius: 10))
