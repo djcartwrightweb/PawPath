@@ -1,11 +1,11 @@
 [{
     "trailId": 1234,
-    "name": "Sunset Trail",
-    "description": "A challenging trail with stunning views of the valley.",
-    "location": "Santa Monica",
+    "name": "Wawanosh Wetlands Conservation Area",
+    "description": "This is a popular trail for birding, hiking, and running, but you can still enjoy some solitude during quieter times of day. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash.",
+    "location": "Sarnia, Ontario",
     "coordinates": {
-        "latitude": 34.0132,
-        "longitude": -118.495
+        "latitude": 42.9939,
+        "longitude": -82.3276
     },
     "photos": ["trailhead", "valley_view"],
     "difficulty": "moderate",
@@ -30,12 +30,12 @@
 },
 {
     "trailId": 1234,
-    "name": "Sunset Trail",
-    "description": "A challenging trail with stunning views of the valley.",
-    "location": "Santa Monica",
+    "name": "Canatara Park",
+    "description": "his trail is great for birding, cross-country skiing, and hiking, and it's unlikely you'll encounter many other people while exploring. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome, but must be on a leash.",
+    "location": "Sarnia, Ontario",
     "coordinates": {
-        "latitude": 34.0132,
-        "longitude": -118.495
+        "latitude": 43.0046,
+        "longitude": -82.4028
     },
     "photos": ["trailhead", "valley_view"],
     "difficulty": "moderate",
@@ -60,12 +60,12 @@
 },
 {
     "trailId": 1234,
-    "name": "Sunset Trail",
-    "description": "A challenging trail with stunning views of the valley.",
+    "name": "Blackwell Trails Park",
+    "description": "This is a high-quality and nice wide gravel trail that meanders several small wetlands, large ponds, and hills. There are not a lot of trees to provide cover from the sun so it can get hot if you go in the middle of the day. If you are here in the middle of winter, it can be quite windy.",
     "location": "Santa Monica",
     "coordinates": {
-        "latitude": 34.0132,
-        "longitude": -118.495
+        "latitude": 43.0024,
+        "longitude": -82.3557
     },
     "photos": ["trailhead", "valley_view"],
     "difficulty": "moderate",
