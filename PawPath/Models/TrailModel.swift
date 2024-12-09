@@ -7,10 +7,42 @@
 
 import Foundation
 
-struct TrailModel: Identifiable {
-    var id: String = UUID().uuidString
-    var name: String
-    var description: String = """
-    This is just a short description that I may just steal from Wikipedia later but it represents a multiline string on the backend that I still need to program in properly.    
-    """
+struct TrailModel: Codable, Identifiable {
+    let id: String = UUID().uuidString
+    let trailID: Int
+    let name, description, location: String
+    let coordinates: Coordinates
+    let photos: [String]
+    let difficulty, terrain: String
+    let length: Double
+    let duration, elevationGain: Int
+    let facilities: [String]
+    let dogFriendlyRating: Int
+    let dogAmenities: DogAmenities
+    let rules: Rules
+    let waterSources, parkingAvailability: String
+    let nearbyAmenities: [String]
+
+    enum CodingKeys: String, CodingKey {
+        case trailID = "trailId"
+        case name, description, location, coordinates, photos, difficulty, terrain, length, duration, elevationGain, facilities, dogFriendlyRating, dogAmenities, rules, waterSources, parkingAvailability, nearbyAmenities
+    }
+    
+    static let allTrails: [TrailModel] = Bundle.main.decode(file: "trails.json")
+    static let sampleTrail: TrailModel = allTrails[0]
 }
+
+struct Coordinates: Codable {
+    let latitude, longitude: Double
+}
+
+
+struct DogAmenities: Codable {
+    let waterStations, wasteStations, offLeashAreas: Bool
+}
+
+
+struct Rules: Codable {
+    let leashRequired, cleanupRequired: Bool
+}
+
