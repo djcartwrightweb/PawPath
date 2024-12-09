@@ -56,7 +56,7 @@ struct TrailView: View {
 }
 
 #Preview {
-    TrailView(trail: TrailModel(name: "Sarnia"))
+    TrailView(trail: TrailModel.sampleTrail)
 }
 
 //#Preview {

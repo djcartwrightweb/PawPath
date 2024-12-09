@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TrailsView: View {
+    
+    private var allTrails = TrailModel.allTrails
+    
     var body: some View {
         
         /* Trails
@@ -24,7 +27,7 @@ struct TrailsView: View {
                 
                 
                 ScrollView {
-                    ForEach(DataServicesManager.sampleTrails) { trail in
+                    ForEach(allTrails) { trail in
                         
                         NavigationLink {
                             TrailView(trail: trail)
