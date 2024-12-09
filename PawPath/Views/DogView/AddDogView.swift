@@ -9,9 +9,10 @@ import SwiftUI
 
 struct AddDogView: View {
     
-    
     @State var dogName: String = ""
-    @State var dogBreed: String = "Affenpinscher"
+    
+    @State private var age = 1
+    
     
     var body: some View {
         //Name
@@ -20,47 +21,87 @@ struct AddDogView: View {
         //Size (small, medium, large) - picker
         //Weight
         
-        
-        ZStack {
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color.teal.opacity(0.5), // Starting darker teal
-                    Color.teal.opacity(0.3)  // Lighter teal at the top
-                ]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .ignoresSafeArea(edges: .top)
+        NavigationStack { //This is here for the picker
             
-            
-            VStack {
+            ZStack {
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        Color.teal.opacity(0.5), // Starting darker teal
+                        Color.teal.opacity(0.3)  // Lighter teal at the top
+                    ]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .ignoresSafeArea(edges: .top)
                 
                 
-                TextField("Type name here...", text: $dogName)
+                VStack {
+                    
+                    
+                    TextField("Type name here...", text: $dogName)
+                        .fontDesign(.serif)
+                        .font(.headline)
+                        .fontWeight(.light)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.secondary.opacity(0.2))
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .shadow(radius: 5)
+                        .padding(.horizontal)
+              
+                    
+                    
+                    //AddDogBreedView() // separate view for breed?
+                    
+                    Divider()
+                        .padding()
+                    
+                    Text("Dog Size:")
+                        .fontDesign(.serif)
+                        .font(.headline)
+                        .fontWeight(.light)
+                        .padding(.bottom)
+                    
+                    AddDogSizeView()
+                    
+                    Divider()
+                        .padding()
+                    
+                    
+                    Stepper("Current age in years:", onIncrement: {
+                        age += 1
+                    }, onDecrement: {
+                        age -= 1
+                    })
                     .fontDesign(.serif)
                     .font(.headline)
+                    .fontWeight(.light)
+                    
+                    Divider()
+                        .padding()
+                    
+                    Text("Summary:")
+                    
+                    Text("Lady is a Small breed dog who is current 7 years of age. She weights approximately: 77lbs")
+                        .fontDesign(.serif)
+                        .font(.headline)
+                        .fontWeight(.light)
+                        .padding()
+    
+                    Button {
+                        print("test")
+                    } label: {
+                        Text("test")
+                    }
                     .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.secondary.opacity(0.3))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .shadow(radius: 5)
-                    .padding(.horizontal)
-                
-                Divider()
-                    .padding(.horizontal)
-                
-                Picker("Distance Tracking", selection: $dogBreed) {
-                    Text("Affenpinscher")
-                    Text("Afghan Hound")
-                    Text("Airedale Terrier")
+                    .buttonStyle(.borderedProminent)
+                    
                 }
-                .pickerStyle(.wheel)
-                .padding(.horizontal)
                 
-            }
+                
+            } .toolbar(.hidden, for: .tabBar)
             
-            
-        } .toolbar(.hidden, for: .tabBar)
+        }
     }
 }
 
