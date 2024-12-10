@@ -1,0 +1,80 @@
+[
+    {
+        "id": "1",
+        "name": "Sunny Meadows Park",
+        "location": "123 Meadow Lane, Dogtown, DT",
+        "hours": "6:00 AM - 8:00 PM",
+        "size": "12 acres",
+        "accessibility": "Wheelchair accessible, Free parking, Pet waste bags provided",
+        "coordinates": {
+            "latitude": 37.7833,
+            "longitude": -122.4233
+        },
+        "dogAmenities": {
+            "waterStations": true,
+            "wasteStations": true,
+            "offLeashAreas": true
+        },
+        "rules": {
+            "leashRequired": false,
+            "cleanupRequired": true
+        },
+        "photos": [
+            "https://example.com/photos/park1_1.jpg",
+            "https://example.com/photos/park1_2.jpg",
+            "https://example.com/photos/park1_3.jpg"
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Barkwood Forest Park",
+        "location": "45 Forest Trail, Woodsville, WV",
+        "hours": "5:00 AM - 9:00 PM",
+        "size": "8 acres",
+        "accessibility": "Wheelchair accessible, Large parking lot, Picnic area",
+        "coordinates": {
+            "latitude": 38.1200,
+            "longitude": -120.5500
+        },
+        "dogAmenities": {
+            "waterStations": true,
+            "wasteStations": false,
+            "offLeashAreas": true
+        },
+        "rules": {
+            "leashRequired": true,
+            "cleanupRequired": true
+        },
+        "photos": [
+            "https://example.com/photos/park2_1.jpg",
+            "https://example.com/photos/park2_2.jpg",
+            "https://example.com/photos/park2_3.jpg"
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Lakeside Paw Park",
+        "location": "789 Lakeview Blvd, Pawville, PV",
+        "hours": "7:00 AM - 7:00 PM",
+        "size": "15 acres",
+        "accessibility": "Wheelchair accessible, Limited parking, Benches available",
+        "coordinates": {
+            "latitude": 36.9614,
+            "longitude": -121.0316
+        },
+        "dogAmenities": {
+            "waterStations": false,
+            "wasteStations": true,
+            "offLeashAreas": false
+        },
+        "rules": {
+            "leashRequired": true,
+            "cleanupRequired": true
+        },
+        "photos": [
+            "https://example.com/photos/park3_1.jpg",
+            "https://example.com/photos/park3_2.jpg",
+            "https://example.com/photos/park3_3.jpg"
+        ]
+    }
+]

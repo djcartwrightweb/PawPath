@@ -32,17 +32,4 @@ struct TrailModel: Codable, Identifiable {
     static let sampleTrail: TrailModel = allTrails[0]
 }
 
-struct Coordinates: Codable {
-    let latitude, longitude: Double
-}
-
-
-struct DogAmenities: Codable {
-    let waterStations, wasteStations, offLeashAreas: Bool
-}
-
-
-struct Rules: Codable {
-    let leashRequired, cleanupRequired: Bool
-}
 

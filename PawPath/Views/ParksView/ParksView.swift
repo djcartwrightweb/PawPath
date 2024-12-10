@@ -7,34 +7,47 @@
 
 import SwiftUI
 
+
+
 struct ParksView: View {
+    
+    private var allParks = ParkModel.allParks
+    
+    @State var selectedPark: ParkModel? = nil
+    
     var body: some View {
         
         
-        /* Trails
-         -SearchBar
-         -Picker
-         -Horizontal ScrollView
+        /* Parks
+         
+         
+         
          -Dog-friendly features of each park as scrolling
-         -separate view for each park
+         -separate view for each park as a sheet
          */
         
         ZStack {
             Color.teal.opacity(0.2).ignoresSafeArea(edges: .top)
-            
+             
             ScrollView(.horizontal, showsIndicators: true) { // Horizontal scroll with indicators
                 HStack(spacing: 20) { // Use HStack for horizontal layout
-                    ForEach(1...10, id: \.self) { index in
+                    ForEach(allParks) { park in
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color.blue)
-                            .frame(width: 100, height: 100)
+                            .frame(width: 200, height: 300)
                             .overlay(
-                                Text("\(index)")
+                                Text("\(park.name)")
                                     .foregroundColor(.white)
                                     .bold()
                             )
+                            .onTapGesture {
+                                selectedPark = park
+                            }
                     }
                 }
+                .sheet(item: $selectedPark, content: { park in
+                    ParkSheetView(selectedPark: park)
+                })
                 .padding()
             }
         }
@@ -46,3 +59,5 @@ struct ParksView: View {
 #Preview {
     ParksView()
 }
+
+
