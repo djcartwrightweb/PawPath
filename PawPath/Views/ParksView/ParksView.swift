@@ -46,7 +46,7 @@ struct ParksView: View {
                     }
                 }
                 .sheet(item: $selectedPark, content: { park in
-                    ParkSheetView(selectedPark: park)
+                    ParkSheetView(park: park)
                 })
                 .padding()
             }

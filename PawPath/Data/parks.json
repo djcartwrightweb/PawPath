@@ -1,7 +1,7 @@
 [
     {
         "id": "1",
-        "name": "Sunny Meadows Park",
+        "name": "Blackwell Park",
         "location": "123 Meadow Lane, Dogtown, DT",
         "hours": "6:00 AM - 8:00 PM",
         "size": "12 acres",
@@ -20,9 +20,10 @@
             "cleanupRequired": true
         },
         "photos": [
-            "https://example.com/photos/park1_1.jpg",
-            "https://example.com/photos/park1_2.jpg",
-            "https://example.com/photos/park1_3.jpg"
+            "blackwell_park_view",
+            "blackwell_park",
+            "blackwell_park_rules",
+            "blackwell_park_map"
         ]
     },
     {
