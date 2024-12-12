@@ -16,11 +16,10 @@ struct AddDogNameView: View {
         VStack(alignment: .leading) {
             Text("Dog Name")
                 .font(.headline)
-                .foregroundColor(.white)
             
             TextField("Enter dog's name", text: $dogName)
                 .padding()
-                .background(Color.white.opacity(0.8))
+                .background(Color.white.opacity(0.6))
                 .cornerRadius(10)
                 .shadow(radius: 5)
                 .font(.body)

@@ -17,7 +17,6 @@ struct AddDogSizeView: View {
         VStack(alignment: .leading) {
             Text("Dog Size")
                 .font(.headline)
-                .foregroundColor(.white)
             
             Picker("Select size", selection: $dogSize) {
                 ForEach(sizeOptions, id: \.self) { size in
@@ -26,7 +25,7 @@ struct AddDogSizeView: View {
             }
             .pickerStyle(SegmentedPickerStyle())
             .padding(.vertical)
-            .background(Color.white.opacity(0.8))
+            .background(Color.gray.opacity(0.2))
             .cornerRadius(10)
         }
         .padding(.horizontal)

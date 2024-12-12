@@ -13,7 +13,6 @@ struct AddDogPhotoView: View {
         VStack {
             Text("Upload Dog's Photo")
                 .font(.headline)
-                .foregroundColor(.white)
             
             Button(action: {
                 // Placeholder for future photo picker action

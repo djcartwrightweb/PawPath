@@ -16,12 +16,11 @@ struct AddDogAgeView: View {
         VStack(alignment: .leading) {
             Text("Dog Age")
                 .font(.headline)
-                .foregroundColor(.white)
             
             Stepper("Age: \(age) years", value: $age, in: 1...20)
                 .font(.body)
                 .padding()
-                .background(Color.white.opacity(0.8))
+                .background(Color.gray.opacity(0.2))
                 .cornerRadius(10)
         }
         .padding(.horizontal)

@@ -19,7 +19,6 @@ struct AddDogSummaryView: View {
             
             Text("Your dog is a \(dogSize) breed, \(age) years old.")
                 .font(.headline)
-                .foregroundColor(.white)
                 .padding(.vertical)
         }
         .padding(.horizontal)

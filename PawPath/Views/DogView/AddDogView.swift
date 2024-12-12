@@ -36,7 +36,6 @@ struct AddDogView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .padding(.top, 40)
-                        .foregroundColor(.white)
                                         
                     // Dog Photo Upload Section (UI only, no functionality yet)
                     AddDogPhotoView()
@@ -65,16 +64,7 @@ struct AddDogView: View {
                     // Summary Section
                     AddDogSummaryView(dogName: $dogName, dogSize: $dogSize, age: $age)
                 }
-                .background(LinearGradient(
-                    gradient: Gradient(colors: [
-                        Color.teal.opacity(0.5),
-                        Color.teal.opacity(0.3)
-                    ]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                ))
-                .cornerRadius(20)
-                .padding(.horizontal)
+
             }
         }
         .toolbar(.hidden, for: .tabBar)
