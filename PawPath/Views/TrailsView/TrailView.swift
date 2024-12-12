@@ -39,7 +39,15 @@ struct TrailView: View {
     var body: some View {
         ZStack {
             // Background color
-            Color.teal.opacity(0.2).ignoresSafeArea()
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color.teal.opacity(0.5), // Starting darker teal
+                    Color.teal.opacity(0.3)  // Lighter teal at the top
+                ]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
             
             // Content behind the drag-up view
             TrailDetailsView(trail: trail)

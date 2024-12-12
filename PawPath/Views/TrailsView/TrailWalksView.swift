@@ -10,7 +10,15 @@ import SwiftUI
 struct TrailWalksView: View {
     var body: some View {
         ZStack {
-            Color.teal.opacity(0.3).ignoresSafeArea()
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color.teal.opacity(0.5), // Starting darker teal
+                    Color.teal.opacity(0.3)  // Lighter teal at the top
+                ]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
             
             VStack {
                 
