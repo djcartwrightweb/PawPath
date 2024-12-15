@@ -6,8 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SettingsDogsView: View {
+    
+    //load all current dogs from swift data into the view
+    @Query(sort: \DogModel.name, order: .forward) var allDogs: [DogModel]
+    
     var body: some View {
         
         Spacer()
@@ -17,7 +22,26 @@ struct SettingsDogsView: View {
         
         ScrollView(.horizontal) {
             HStack {
-                ForEach(0..<1) { index in
+                
+//                ForEach(0..<1) { index in
+//                    Circle()
+//                        .frame(width: 100, height: 100)
+//                        .foregroundStyle(Color.teal.opacity(0.7))
+//                        .overlay {
+//                            Circle()
+//                                .frame(width: 90, height: 90)
+//                                .foregroundStyle(Color.white)
+//                                .overlay {
+//                                    Image(systemName: "dog.fill")
+//                                        .resizable()
+//                                        .frame(width: 50, height: 50)
+//                                        .foregroundStyle(Color.brown)
+//                                    
+//                                }
+//                        }
+//                }
+                
+                ForEach(allDogs) { dog in
                     Circle()
                         .frame(width: 100, height: 100)
                         .foregroundStyle(Color.teal.opacity(0.7))
@@ -26,11 +50,7 @@ struct SettingsDogsView: View {
                                 .frame(width: 90, height: 90)
                                 .foregroundStyle(Color.white)
                                 .overlay {
-                                    Image(systemName: "dog.fill")
-                                        .resizable()
-                                        .frame(width: 50, height: 50)
-                                        .foregroundStyle(Color.brown)
-                                    
+                                    Text(dog.name)
                                 }
                         }
                 }

@@ -35,7 +35,7 @@ struct AddDogSummaryView: View {
             
             // Create a new dog from the data provided and insert it into SwiftData storage
             // Do some checks for invalid input (e.g. name is blank)
-            var newDog = DogModel(name: dogName, size: dogSize, age: dogAge)
+            let newDog = DogModel(name: dogName, size: dogSize, age: dogAge)
             dogContext.insert(newDog)
             
             print("Adding dog named: \(dogName.lowercased()), \(dogSize.lowercased())-sized,\nAge: \(dogAge)")
