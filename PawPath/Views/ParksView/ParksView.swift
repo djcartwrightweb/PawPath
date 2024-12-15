@@ -27,15 +27,7 @@ struct ParksView: View {
          */
         
         ZStack {
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color.teal.opacity(0.5), // Starting darker teal
-                    Color.teal.opacity(0.3)  // Lighter teal at the top
-                ]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .ignoresSafeArea(edges: .top)
+            BackgroundView()
              
             ScrollView(.horizontal, showsIndicators: true) { // Horizontal scroll with indicators
                 HStack(spacing: 20) { // Use HStack for horizontal layout

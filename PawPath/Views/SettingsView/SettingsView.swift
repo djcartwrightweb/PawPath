@@ -32,15 +32,7 @@ struct SettingsView: View {
         
         NavigationStack {
             ZStack {
-                LinearGradient(
-                    gradient: Gradient(colors: [
-                        Color.teal.opacity(0.5), // Starting darker teal
-                        Color.teal.opacity(0.3)  // Lighter teal at the top
-                    ]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .ignoresSafeArea(edges: .top)
+                BackgroundView()
                 
                 
                 ScrollView {
@@ -76,7 +68,25 @@ struct SettingsView: View {
                         Divider()
                             .padding()
                         
-                        Spacer()
+                        
+                        //this needs to stand out more so user can see it
+                        NavigationLink {
+                            
+                        } label: {
+                            
+                            HStack {
+                                Text("Permissions:")
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .foregroundStyle(.mint)
+                                    .font(.headline)
+                                    .padding(.trailing)
+                                
+                            }
+                            .padding(.horizontal)
+                        }
+                        
+                        
                         
                     }
                     .padding()

@@ -163,15 +163,7 @@ struct Redesign: View {
     var body: some View {
         
         ZStack {
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color.teal.opacity(0.5), // Starting darker teal
-                    Color.teal.opacity(0.3)  // Lighter teal at the top
-                ]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .ignoresSafeArea(edges: .top)
+            BackgroundView()
             
             VStack {
                 // Park Name Header

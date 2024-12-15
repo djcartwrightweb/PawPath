@@ -22,15 +22,7 @@ struct TrailsView: View {
         
         NavigationStack {
             ZStack {
-                LinearGradient(
-                    gradient: Gradient(colors: [
-                        Color.teal.opacity(0.5), // Starting darker teal
-                        Color.teal.opacity(0.3)  // Lighter teal at the top
-                    ]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .ignoresSafeArea()
+                BackgroundView()
                 //need to stop ignoring the safe area when starting to scroll
                 
                 
