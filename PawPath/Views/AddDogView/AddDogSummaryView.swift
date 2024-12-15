@@ -40,14 +40,21 @@ struct AddDogSummaryView: View {
             
             print("Adding dog named: \(dogName.lowercased()), \(dogSize.lowercased())-sized,\nAge: \(dogAge)")
         } label: {
-            Text("Save Dog")
-                .fontWeight(.semibold)
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.mint)
-                .cornerRadius(10)
-                .shadow(radius: 5)
+            //change the image in this button (as well as whether or not it is able to click) based on valid input or not
+            HStack {
+                Image(systemName: "pencil.slash")
+                    .padding(.leading)
+                Spacer()
+                Text("Save Dog")
+                Spacer()
+            }
+            .fontWeight(.semibold)
+            .foregroundColor(.white)
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(.mint)
+            .cornerRadius(10)
+            .shadow(radius: 5)
         }
         .padding(.horizontal)
         .padding()

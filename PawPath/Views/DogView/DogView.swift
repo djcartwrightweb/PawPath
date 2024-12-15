@@ -50,11 +50,13 @@ struct DogView: View {
                             Text("Breed Size:")
                             Spacer()
                             Text("\(dog.size)")
+                                .padding(.trailing)
                         }
                         HStack {
                             Text("Age:")
                             Spacer()
                             Text("\(dog.age)")
+                                .padding(.trailing)
                         }
                     }
                     .padding(.horizontal)
@@ -75,16 +77,22 @@ struct DogView: View {
                             Text("Trails:")
                             Spacer()
                             Image(systemName: "chevron.right")
+                                .font(.title3)
+                                .padding(.trailing)
                         }
                         HStack {
                             Text("Dog Parks:")
                             Spacer()
                             Image(systemName: "chevron.right")
+                                .font(.title3)
+                                .padding(.trailing)
                         }
                         HStack {
                             Text("Walks:")
                             Spacer()
                             Image(systemName: "chevron.right")
+                                .font(.title3)
+                                .padding(.trailing)
                         }
                     }
                     .padding(.horizontal)
@@ -92,6 +100,48 @@ struct DogView: View {
 
                 Divider()
                     .padding()
+                
+                HStack {
+                    Button {
+                        //delete button
+                    } label: {
+                        HStack {
+                            Image(systemName: "location")
+                                .padding(.leading)
+                            Spacer()
+                            Text("Delete Dog")
+                            Spacer()
+                        }
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(.red.opacity(0.9))
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
+                    }
+                    .padding(.leading)
+                    
+                    Button {
+                        //delete button
+                    } label: {
+                        HStack {
+                            Image(systemName: "location")
+                                .padding(.leading)
+                            Spacer()
+                            Text("Edit Dog")
+                            Spacer()
+                        }
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(.red.opacity(0.9))
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
+                    }
+                    .padding(.trailing)
+                }
                 
                 Spacer()
                 
