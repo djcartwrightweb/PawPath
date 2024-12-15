@@ -56,13 +56,13 @@ struct AddDogView: View {
                         .padding(.horizontal)
                     
                     // Dog Age Stepper
-                    AddDogAgeView(age: $age)
+                    AddDogAgeView(dogAge: $age)
                     
                     Divider()
                         .padding(.horizontal)
                     
                     // Summary Section
-                    AddDogSummaryView(dogName: $dogName, dogSize: $dogSize, age: $age)
+                    AddDogSummaryView(dogName: $dogName, dogSize: $dogSize, dogAge: $age)
                 }
 
             }

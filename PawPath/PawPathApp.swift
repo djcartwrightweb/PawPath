@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct PawPathApp: App {
@@ -16,6 +17,7 @@ struct PawPathApp: App {
         WindowGroup {
             MenuView()
                 .environment(settingsViewModel)
+                .modelContainer(for: DogModel.self)
         }
     }
 }

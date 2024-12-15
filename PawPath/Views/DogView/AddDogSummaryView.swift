@@ -6,18 +6,21 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddDogSummaryView: View {
     
+    @Environment(\.modelContext) private var dogContext
+    
     @Binding var dogName: String
     @Binding var dogSize: String
-    @Binding var age: Int
+    @Binding var dogAge: Int
     
     var body: some View {
         
         VStack(alignment: .leading) {
             
-            Text("Your dog is a \(dogSize) breed, \(age) years old.")
+            Text("Your dog \(dogName) is a \(dogSize) breed, \(dogAge) years old.")
                 .font(.headline)
                 .padding(.vertical)
         }
@@ -28,8 +31,14 @@ struct AddDogSummaryView: View {
         
         // Submit Button
         Button {
-            // Action on button press
-            print("Adding dog: \(dogName), \(dogSize), Age: \(age)")
+            
+            
+            // Create a new dog from the data provided and insert it into SwiftData storage
+            // Do some checks for invalid input (e.g. name is blank)
+            var newDog = DogModel(name: dogName, size: dogSize, age: dogAge)
+            dogContext.insert(newDog)
+            
+            print("Adding dog named: \(dogName.lowercased()), \(dogSize.lowercased())-sized,\nAge: \(dogAge)")
         } label: {
             Text("Save Dog")
                 .fontWeight(.semibold)
@@ -47,5 +56,5 @@ struct AddDogSummaryView: View {
 }
 
 #Preview {
-    AddDogSummaryView(dogName: .constant(""), dogSize: .constant("Medium"), age: .constant(1))
+    AddDogSummaryView(dogName: .constant("Lady"), dogSize: .constant("Medium"), dogAge: .constant(1))
 }

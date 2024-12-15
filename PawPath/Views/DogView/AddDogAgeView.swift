@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddDogAgeView: View {
     
-    @Binding var age: Int
+    @Binding var dogAge: Int
     
     var body: some View {
         
@@ -17,7 +17,7 @@ struct AddDogAgeView: View {
             Text("Dog Age")
                 .font(.headline)
             
-            Stepper("Age: \(age) years", value: $age, in: 1...20)
+            Stepper("Age: \(dogAge) years", value: $dogAge, in: 1...20)
                 .font(.body)
                 .padding()
                 .background(Color.gray.opacity(0.2))
@@ -29,5 +29,5 @@ struct AddDogAgeView: View {
 }
 
 #Preview {
-    AddDogAgeView(age: .constant(1))
+    AddDogAgeView(dogAge: .constant(1))
 }
